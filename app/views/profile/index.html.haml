@@ -1,0 +1,88 @@
+.page-header
+  .container
+    %h1
+      Mi perfil de Restaurante
+      %small toda la info estara aqui
+.container
+  .row
+    .col-md-3
+      %ul.nav.nav-pills.nav-stacked.table-bordered
+        %li
+          %a.text-center{"data-toggle" => "tab",href:"#info"}
+            Info user
+            .glyphicon.glyphicon-user
+        %li
+          %a.text-center{"data-toggle" => "tab",href:"#recetas"}
+            Recetas
+            .glyphicon.glyphicon-list
+        %li
+          %a.text-center{"data-toggle" => "tab",href:"#followers"}
+            Seguidores
+            .glyphicon.glyphicon-heart
+        %li.active
+          %a.text-center{"data-toggle" => "tab",href:"#datos"}
+            Tabla datos
+            .glyphicon.glyphicon-list-alt
+
+    .col-md-9
+      .tab-content
+        .tab-pane.fade{id:"info"}
+          Informacion
+          %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+
+        .tab-pane.fade{id:"recetas"}
+          Recetas
+          Informacion
+          %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+        .tab-pane.fade{id:"followers"}
+          Followers
+          %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+        .tab-pane.fade.in.active{id:"datos"}
+          %table.table.table-striped.table-bordered
+            %thead
+              %tr
+                %th Heading
+                %th Heading
+                %th Heading
+                %th Heading
+                %th Heading
+            %tbody
+              %tr
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+              %tr
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+              %tr
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+              %tr
+                %th Info
+                %th Info
+                %th Info
+                %th Info
+                %th
+  %ul.nav.nav-tabs{id:"myTab"}
+    %li.active
+      %a{"data-toggle" => "tab", href: "#home"} Home
+    %li
+      %a{"data-toggle" => "tab", href: "#profile"} Profile
+    %li
+      %a{"data-toggle" => "tab", href: "#messages"} Messages
+    %li
+      %a{"data-toggle" => "tab", href: "#settings"} Settings
+  .tab-content
+    .tab-pane.active{id:"home"} a
+    .tab-pane{id:"profile"} b
+    .tab-pane{id:"messages"} c
+    .tab-pane{id:"settings"} d
+

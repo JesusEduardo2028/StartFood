@@ -43,6 +43,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'mongoid'
 gem 'therubyracer', :platform=>:ruby
+gem 'thin'
 
 group :development do
   gem 'better_errors'
@@ -60,5 +61,9 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
   gem 'mongoid-rspec'
+
+gem 'client_side_validations'
+gem 'simple_form'
+
 end
 

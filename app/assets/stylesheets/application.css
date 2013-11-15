@@ -10,4 +10,30 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
  */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.logo{float:left;
+    padding-top: 5px;
+}
+
+.div-registro{float:left;
+    padding-top: 8px;
+
+}
+.btn-registro{
+
+    width: 200px;
+}
+
+.link-login{float:left;
+    padding-top: 14px;
+    padding-right: 10px;
+    font: oblique;
+    color: darkgray;
+}

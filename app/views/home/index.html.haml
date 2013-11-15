@@ -1,0 +1,112 @@
+.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %img.img-responsive.logo{src: "http://placehold.it/182x46"}
+
+
+
+    .navbar-collapse.collapse
+
+      %a.div-registro.navbar-right{"data-toggle"=>"modal","data-target"=>"#regModal"}
+        %btn.btn.btn-success.btn-registro Crear una cuenta
+
+
+      %span.navbar-right.link-login{id: "head-signin"}
+        %a.signin{href: new_user_session_path } Entar
+
+    / /.navbar-collapse
+/ Main jumbotron for a primary marketing message or call to action
+.container
+  .carousel.slide{id:"home-carousel"}
+    %ol.carousel-indicators
+      %li.active{"data-target"=>"#home-carousel","data-slide-to"=>"0"}
+      %li{"data-target"=>"#home-carousel","data-slide-to"=>"1"}
+      %li{"data-target"=>"#home-carousel","data-slide-to"=>"2"}
+      %li{"data-target"=>"#home-carousel","data-slide-to"=>"3"}
+    .carousel-inner
+      .item.active
+        %img.img-responsive{src: "http://placehold.it/1200x400"}
+        .carousel-caption
+          %h3 Informacion
+          %p esta es la informacion del slideshow kiwii
+      .item
+        %img.img-responsive{src: "http://placehold.it/1200x400"}
+      .item
+        %img.img-responsive{src: "http://placehold.it/1200x400"}
+      .item
+        %img.img-responsive{src: "http://placehold.it/1200x400"}
+      %a.carousel-control.left{href:"#home-carousel" ,"data-slide"=>"prev"}
+        .glyphicon.glyphicon-chevron-left
+      %a.carousel-control.right{href:"#home-carousel" ,"data-slide"=>"next"}
+        .glyphicon.glyphicon-chevron-right
+  .row
+    .col-md-12
+      //%img{src: 'images/kiwii-index.jpg'}
+
+      %h2 Heading
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      %p
+        %a.btn.btn-default{href: "#", role: "button"} View details »
+  //tercera fila
+  %ul
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4 Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+    .col-md-3
+      .img-thumbnail
+        %a{href:"#"}
+          %img.img-responsive{src: "http://placehold.it/300x200"}
+          %h4.text-center Etiqueta
+
+%div.modal.fade{id: "regModal" , tabIndex: "-1", role: "dialog" , "aria-labelledby" => "myModalLabel",  "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title{id: "myModalLabel"} Modal title
+      .modal-body
+        =render 'devise/registrations/new'
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+
+

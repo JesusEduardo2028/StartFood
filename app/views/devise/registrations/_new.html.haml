@@ -1,0 +1,28 @@
+%h2.text-center Bienvenido a Kiwii
+%ul.nav.nav-pills.nav-justified
+
+  %li.active
+    %a{href:"#"} Paso 1
+  %li.disabled
+    %a{href:"#"} Paso 2
+%br
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  %div
+    =f.label "Nombre Propietario"
+    %br
+    =f.text_field :name
+  %div
+    = f.label :email
+    %br/
+    = f.email_field :email, :autofocus => true
+  %div
+    = f.label :password
+    %br/
+    = f.password_field :password
+  %div
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  %div= f.submit "Sign up"
+= render "devise/shared/links"
