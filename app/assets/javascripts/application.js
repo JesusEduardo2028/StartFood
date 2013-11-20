@@ -14,7 +14,12 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap
+//= require rails.validations
 
 $(document).ready(function(){
     $('.carousel').carousel('cycle');
+    $('#sign_up').find('#sign_up_user').enableClientSideValidations();
+
 });
+
+

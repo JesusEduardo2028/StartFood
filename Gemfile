@@ -45,6 +45,10 @@ gem 'mongoid'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 
+gem 'client_side_validations'
+gem 'simple_form'
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -62,8 +66,6 @@ group :test do
   gem 'email_spec'
   gem 'mongoid-rspec'
 
-gem 'client_side_validations'
-gem 'simple_form'
 
 end
 
