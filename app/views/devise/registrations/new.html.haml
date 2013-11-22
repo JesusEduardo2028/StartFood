@@ -1,19 +1,17 @@
 %h2 Sign up
-= form_for(resource, :as => resource_name,
+=simple_form_for(resource, :as => resource_name,
            :url => registration_path(resource_name),
            :html => {:id => "sign_up_user"},
-           :format => :json,
-           :remote => true,
            :validate => true ) do |f|
   = devise_error_messages!
   %div{id: "error-messages"}
-    %p
+    %p nada
   %div
     =f.label :name
     %br
-    =f.text_field :name, :autofocus => true
+    =f.text_field :name, :autofocus => true , :validate => { :presence => true, :uniqueness => true }
   %div
-    = f.label :email
+    = f.label :email  , :validate => { :presence => true, :uniqueness => true }
     %br/
     = f.email_field :email
   %div

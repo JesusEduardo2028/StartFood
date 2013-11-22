@@ -15,11 +15,19 @@
 //= require_tree .
 //= require bootstrap
 //= require rails.validations
+//= require rails.validations.simple_form
+
 
 $(document).ready(function(){
     $('.carousel').carousel('cycle');
-    $('#sign_up').find('#sign_up_user').enableClientSideValidations();
+    $(".alert").toggle()
+})
 
-});
 
+$(document).ready(function(){
+    $('#sign_up_user').submit(function(){
+        $.post($(this).attr("action"),$(this).serialize(),null,"script");
+        return false
+    })
+})
 

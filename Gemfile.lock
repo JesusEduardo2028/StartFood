@@ -41,6 +41,9 @@ GEM
       sass (~> 3.2)
     builder (3.0.4)
     client_side_validations (3.2.6)
+    client_side_validations-simple_form (2.1.0)
+      client_side_validations (~> 3.2.5)
+      simple_form (~> 2.1.0)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -68,6 +71,9 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     haml (4.1.0.alpha.2)
       tilt
     haml-rails (0.4)
@@ -198,11 +204,13 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (>= 3.0.0.0)
   client_side_validations
+  client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   database_cleaner (= 1.0.1)
   devise
   email_spec
   figaro
+  gon
   haml-rails
   html2haml
   jquery-rails

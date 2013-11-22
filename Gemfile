@@ -46,7 +46,9 @@ gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 
 gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 gem 'simple_form'
+gem 'gon'
 
 
 group :development do

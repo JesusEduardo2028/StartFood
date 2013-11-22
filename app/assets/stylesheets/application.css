@@ -22,18 +22,33 @@ body {
     padding-top: 5px;
 }
 
-.div-registro{float:left;
-    padding-top: 8px;
-
-}
-.btn-registro{
-
-    width: 200px;
-}
 
 .link-login{float:left;
     padding-top: 14px;
     padding-right: 10px;
     font: oblique;
     color: darkgray;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: #F3E2A9;
+    display: table;
+    text-justify: inter-cluster;
+    border-style: dotted;
+    border-color: #C49640;
+    border-width: 1px;
+}
+.message{
+    color: #C49640;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#btn-submit-reg{
+    width: 40%;
+}
+
+.text-checkbox{
+    color: aliceblue;
 }

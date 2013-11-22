@@ -30,8 +30,12 @@ class User
 
 
 #nuevo atributo para el nombre
-  field :name
-  validates_presence_of :name, :email
-  validates_uniqueness_of :name, :case_sensitive => false
+  field :name ,:type => String, :default => ""
 
-end
+  validates_presence_of :name, :email , :password, :password_confirmation, :message =>" Empty Field"
+  validates_uniqueness_of :name ,:email
+  validates_confirmation_of :password
+  validates :password_confirmation, :presence => true
+
+
+  end

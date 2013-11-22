@@ -1,27 +1,30 @@
-%h2 Sign up
+
 = form_for(resource, :as => resource_name,
            :url => registration_path(resource_name),
            :html => {:id => "sign_up_user"},
-           :format => :json,
-           :remote => true,
-           :validate => true ) do |f|
-  = devise_error_messages!
-  %div{id: "error-messages"}
-    %p
+           :validate => true ,
+           :remote => true) do |f|
+
+  .alert.alert-warning.fade.in
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+    %strong
+      .text-center Debe ingresar todos los campos correctamente
+
   %div
-    =f.label :name
+    =f.label "UserName"
     %br
-    =f.text_field :name, :autofocus => true
+    =f.text_field :name, :autofocus => true , id: 'name'
   %div
     = f.label :email
     %br/
-    = f.email_field :email
+    = f.email_field :email , id: 'email'
   %div
     = f.label :password
     %br/
-    = f.password_field :password
+    = f.password_field :password , id: 'password'
   %div
-    = f.label :password_confirmation
+    = f.label "Ingrese de nuevo el password"
     %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up", class: 'btn btn-success btn-medium'
+    = f.password_field :password_confirmation , id: 'password_confirmation'
+  %br
+  %div= f.submit "Registrate", class: 'btn btn-success btn-medium full' ,id: 'btn-submit-reg'

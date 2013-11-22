@@ -1,0 +1,19 @@
+
+$("#sign_up").find('input:visible:first').focus().end().find('#sign_up_user').enableClientSideValidations()
+
+<% if @confirmation%>
+
+window.location.href = "profile/index"
+
+<%else%>
+$(".alert").show()
+$('#name').focus()
+$('#email').focus()
+$('#password').focus()
+$('#password_confirmation').focus()
+$('#btn-submit-reg').focus()
+<%end%>
+
+
+
+
