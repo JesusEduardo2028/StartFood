@@ -1,0 +1,15 @@
+%p#notice= notice
+%p
+  %b Foto perfil
+%a.thumbnail.text-center{href:"#"}
+  %img.img-responsive{src: "http://placehold.it/400x200"}
+%p
+  %b Informacion:
+  = @restaurant.description
+%p
+  %b Direccion:
+  = @restaurant.address
+%p
+  %b Telefono:
+  = @restaurant.phone
+

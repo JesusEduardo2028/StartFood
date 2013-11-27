@@ -32,6 +32,9 @@ class User
 #nuevo atributo para el nombre
   field :name ,:type => String, :default => ""
 
+
+  has_many :restaurants
+
   validates_presence_of :name, :email , :password, :password_confirmation, :message =>" Empty Field"
   validates_uniqueness_of :name ,:email
   validates_confirmation_of :password

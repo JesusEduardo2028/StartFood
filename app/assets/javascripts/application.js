@@ -20,14 +20,11 @@
 
 $(document).ready(function(){
     $('.carousel').carousel('cycle');
-    $(".alert").toggle()
-})
+    $("#alerta-registro").toggle()
+});
 
+$("#btn-edit").on("click",function(){
+    ("#edit").html("adsf");
+});
 
-$(document).ready(function(){
-    $('#sign_up_user').submit(function(){
-        $.post($(this).attr("action"),$(this).serialize(),null,"script");
-        return false
-    })
-})
 

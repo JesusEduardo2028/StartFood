@@ -1,0 +1,23 @@
+= simple_form_for(@restaurant, remote: true) do |f|
+  = f.error_notification
+  %a.thumbnail.text-center{href:"#"}
+    %img.img-responsive{src: "http://placehold.it/400x200"}
+  %p
+  .form-inputs
+    =f.label "Informacion:"
+    = f.text_area :description,class:"form-control", rows:3
+    %br
+    %br
+    =f.label "Direccion:"
+    %br
+    =f.text_field :address,class:"form-control", id:"message_area"
+    %br
+    %br
+    =f.label "Telefono:"
+    %br
+    =f.text_field :phone,class:"form-control", id:"message_area"
+  %br
+  %br
+  .form-actions
+    =f.submit "Guardar Cambios", type: "submit", :class=>"btn btn-success btn-medium full"
+    =link_to "Descartar cambios" , restaurant_profile_path(:restaurant=>@restaurant.name), :method => :get,:class=>"btn btn-info"

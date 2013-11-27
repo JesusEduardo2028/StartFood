@@ -1,0 +1,134 @@
+.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %img.img-responsive.logo{src: "http://placehold.it/182x40"}
+
+
+
+
+    .collapse.navbar-collapse
+
+      -if user_signed_in?
+        %ul.nav.navbar-nav
+          %li &nbsp; &nbsp;
+          %li
+            %a{href: root_url}Home
+          %li
+            %a{href: my_restaurants_path}Mis Restaurantes
+
+
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown{id:"fat-menu"}
+
+            %a{href:"#",id:"drop3", role:"button", class:"dropdown-toggle","data-toggle"=>"dropdown"}
+              =current_user.name
+              %span.caret
+            %ul.dropdown-menu{"aria-labelledby" => "drop3"}
+              %li
+                %a{tabindex:"-1", href: "#"} Action
+              %hr
+              %li
+                =link_to "Cerrar Sesion" , destroy_user_session_path, :method => :delete
+
+
+
+      -else
+        %span.navbar-right
+          =render "devise/sessions/new"
+
+
+
+    / /.navbar-collapse
+/ Main jumbotron for a primary marketing message or call to action
+.alert-success.text-center{id: "alerta-registro"} Datos actualizados
+.container
+  .container-fluid
+    .row
+      .col-md-3
+        %br
+        %br
+        %br
+        %br
+
+        %ul.nav.nav-pills.nav-stacked.table-bordered
+          %li.active
+            %a.text-center{"data-toggle" => "tab",href:"#info"}
+              Perfil
+              .glyphicon.glyphicon-user
+          %li
+            %a.text-center{"data-toggle" => "tab",href:"#recetas"}
+              Recetas
+              .glyphicon.glyphicon-list
+          %li
+            %a.text-center{"data-toggle" => "tab",href:"#followers"}
+              Seguidores
+              .glyphicon.glyphicon-heart
+          %li
+            %a.text-center{"data-toggle" => "tab",href:"#datos"}
+              Estadisticas
+              .glyphicon.glyphicon-list-alt
+
+      .col-md-9
+        .tab-content
+          .tab-pane.fade.in.active{id:"info"}
+            %h2.page-header
+              ="#{@restaurant.name}: perfil restaurante"
+
+              =link_to  "Editar Info", "#{edit_restaurant_profile_path(:restaurant => @restaurant.name)}" , :class =>"btn btn-success pull-right" ,remote: true, id: "btn-edit-restaurant"
+            .div{id:"show"}
+              =render "restaurants/show"
+
+
+
+
+          .tab-pane.fade{id:"recetas"}
+            %h2.page-header
+              ="#{@restaurant.name}: recetas"
+            %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+          .tab-pane.fade{id:"followers"}
+            %h2.page-header
+              ="#{@restaurant.name}: seguidores"
+            %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+          .tab-pane.fade{id:"datos"}
+            %h2.page-header
+              ="#{@restaurant.name}: estadisticas"
+            %table.table.table-striped.table-bordered
+              %thead
+                %tr
+                  %th Heading
+                  %th Heading
+                  %th Heading
+                  %th Heading
+                  %th Heading
+              %tbody
+                %tr
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                %tr
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                %tr
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                %tr
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th Info
+                  %th
+
+

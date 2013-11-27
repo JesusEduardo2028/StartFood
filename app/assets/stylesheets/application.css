@@ -17,6 +17,12 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+.body-list {
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
 
 .logo{float:left;
     padding-top: 5px;
@@ -31,13 +37,12 @@ body {
 }
 
 .field_with_errors {
-    padding: 2px;
+
     background-color: #F3E2A9;
-    display: table;
-    text-justify: inter-cluster;
     border-style: dotted;
     border-color: #C49640;
     border-width: 1px;
+
 }
 .message{
     color: #C49640;
@@ -51,4 +56,55 @@ body {
 
 .text-checkbox{
     color: aliceblue;
+}
+.form-session{
+    width: 80%;
+
+}
+.form-registration{
+    width: 50%;
+
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.text-small{
+    font-size: small;
+}
+.restaurants {
+
+
+    border: 1px #cecece solid;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.restaurant-title {
+    font-size: 20px;
+    color: #6a6a6a;
+    font-weight: normal;
+    line-height: 2.2em;
+    padding: 0 14px 0 14px;
+    margin: 0;
+    border-bottom: 1px
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.margen{
+    margin: 10px;
+}
+
+#message_area {
+    width: 300px;
+
 }

@@ -1,12 +1,16 @@
 Kiwii::Application.routes.draw do
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  resources :restaurants
 
 
-  get "profile/index"
+  devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
 
-  resources :profile
 
+
+
+  get 'my_restaurants', to: 'restaurant_list#show'
+  get 'restaurant_profile', to: 'profile#show'
+  get 'edit_restaurant_profile', to: 'profile#edit'
 
   root :to => "home#index"
   # The priority is based upon order of creation:
