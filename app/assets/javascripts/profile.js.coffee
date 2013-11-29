@@ -3,5 +3,3 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-$("#btn-edit").on "click", ->
-("#edit").html "adsf"

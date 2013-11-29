@@ -1,0 +1,4 @@
+
+
+$("#alerta-error").html("<%= escape_javascript(render "home/alert",:message=>"Seleccione el archivo que desea subir",:type=>"danger")%>");
+$(".alert-danger").delay(3000).fadeOut()

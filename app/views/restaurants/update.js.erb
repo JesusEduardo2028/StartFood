@@ -9,6 +9,10 @@
 
 
 
-$('#show').toggle().fadeIn(1000).html("<%= escape_javascript(render "restaurants/show") %>");
-$('#btn-edit-restaurant').toggle();
-$("#alerta-registro").toggle().fadeOut(5000);
+
+$("#alerta-profile").html("<%= escape_javascript(render "home/alert",:message=>"Datos actualizados satisfactoriamente",:type=>"success")%>");
+$(".alert-success").delay(3000).fadeOut()
+$(document).ready(function(){
+         $("html, body").animate({ scrollTop: 0 }, 500);
+
+});

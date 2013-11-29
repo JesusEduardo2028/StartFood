@@ -1,0 +1,19 @@
+= simple_form_for(@restaurant_photo,
+        :url=>restaurant_photos_path(:restaurant=>@restaurant.name),
+        :html=>{:multipart=>true},
+        :remote=>true,
+        :format => 'js') do |g|
+
+  .container-fluid
+    .alert-container{id: "alerta-error"}
+      .empty-alert{id:"empty-alert"}
+        -if flash[:notice]
+          .alert-success.text-center
+            =flash[:notice]
+
+
+
+    = g.file_field :image
+    %br
+    %br
+    = g.button :submit, "ok",:class=>"btn btn-info pull-right full"

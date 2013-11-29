@@ -1,8 +1,26 @@
-%p#notice= notice
-%p
-  %b Foto perfil
-%a.thumbnail.text-center{href:"#"}
-  %img.img-responsive{src: "http://placehold.it/400x200"}
+.carousel.slide{id:"restaurant-carousel"}
+  %ol.carousel-indicators
+    -@restaurant.restaurant_photos.count.times do |i|
+      %li.active{"data-target"=>"#restaurant-carousel","data-slide-to"=>"#{i}"}
+
+  .carousel-inner
+    -if @restaurant.restaurant_photos.first.nil?
+      .item.active
+
+    -else
+      .item.active
+        %a.thumbnail{href:"#"}
+          =image_tag @restaurant.restaurant_photos.first.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
+
+    -@restaurant.restaurant_photos.each do |photo|
+
+      .item
+        %a.thumbnail{href:"#"}
+          =image_tag photo.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
+  %a.carousel-control.left{href:"#restaurant-carousel" ,"data-slide"=>"prev"}
+    .glyphicon.glyphicon-chevron-left
+  %a.carousel-control.right{href:"#restaurant-carousel" ,"data-slide"=>"next"}
+    .glyphicon.glyphicon-chevron-right
 %p
   %b Informacion:
   = @restaurant.description

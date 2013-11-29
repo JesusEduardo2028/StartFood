@@ -1,7 +1,8 @@
-= simple_form_for(@restaurant)  do |f|
+= simple_form_for(@restaurant, :html=>{:multipart =>true})  do |f|
   = f.error_notification
 
   .form-inputs
+    = f.file_field :image
     = f.input :name
     = f.input :description
     = f.input :address

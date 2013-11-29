@@ -7,6 +7,6 @@ class Restaurant
   field :address
   field :phone
 
-
+  has_many :restaurant_photos
   belongs_to :user
 end

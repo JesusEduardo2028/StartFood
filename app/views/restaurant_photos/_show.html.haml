@@ -1,0 +1,46 @@
+.center-info
+  .p.h3 Fotos de perfil
+  %hr
+  .carousel.slide{id:"restaurant-carousel"}
+    %ol.carousel-indicators
+      -@restaurant.restaurant_photos.count.times do |i|
+        %li.active{"data-target"=>"#restaurant-carousel","data-slide-to"=>"#{i}"}
+
+    .carousel-inner
+      -if @restaurant.restaurant_photos.first.nil?
+        .item.active
+          %a.thumbnail{href:"#"}
+            %img.img-responsive{src: "http://placehold.it/1200x400"}
+      -else
+        .item.active
+          %a.thumbnail{href:"#"}
+            =image_tag @restaurant.restaurant_photos.first.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
+
+      -@list.each do |photo|
+        -if @list.first==photo
+
+        -else
+          .item
+            %a.thumbnail{href:"#"}
+              =image_tag photo.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
+
+    %a.carousel-control.left{href:"#restaurant-carousel" ,"data-slide"=>"prev"}
+      .glyphicon.glyphicon-chevron-left
+    %a.carousel-control.right{href:"#restaurant-carousel" ,"data-slide"=>"next"}
+      .glyphicon.glyphicon-chevron-right
+
+  %a.div-registro.full{"data-toggle"=>"modal","data-target"=>"#regModal"}
+    %btn.btn.btn-success.btn-registro.full Subir foto
+
+%div.modal.fade{id: "regModal" , tabIndex: "-1", role: "dialog" , "aria-labelledby" => "myModalLabel",  "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title{id: "myModalLabel"} Subir imagen
+      .modal-body
+        =render "restaurant_photos/form"
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+

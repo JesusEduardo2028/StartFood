@@ -61,11 +61,11 @@ class RestaurantsController < ApplicationController
   # PUT /restaurants/1.json
   def update
     @restaurant = Restaurant.find(params[:id])
-
+    #flash[:notice]= "Datos actualizados satisfactoriamente"
 
     respond_to do |format|
       if @restaurant.update_attributes(params[:restaurant])
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
+        format.html { redirect_to restaurant_profile_path(:restaurant=>@restaurant.name) }
         format.json { head :no_content }
         format.js
       else

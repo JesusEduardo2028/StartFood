@@ -16,11 +16,13 @@
 //= require bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form
-
+//= require jasny-bootstrap
 
 $(document).ready(function(){
     $('.carousel').carousel('cycle');
     $("#alerta-registro").toggle()
+    $(".alert-success").delay(3000).fadeOut()
+
 });
 
 $("#btn-edit").on("click",function(){

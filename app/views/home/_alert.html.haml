@@ -1,0 +1,10 @@
+.empty-alert{id:"empty-alert"}
+  -if type=="success"
+    .alert-success.text-center
+      =message
+  -if type=="danger"
+    .alert-danger.text-center
+      =message
+  -if type=="warning"
+    .alert-warning.text-center
+      =message

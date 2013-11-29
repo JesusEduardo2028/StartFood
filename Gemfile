@@ -49,7 +49,10 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'simple_form'
 gem 'gon'
-
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'jasny_bootstrap_extension_rails'
+gem 'rmagick', '2.13.2'
 
 group :development do
   gem 'better_errors'

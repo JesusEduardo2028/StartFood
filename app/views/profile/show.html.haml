@@ -21,7 +21,6 @@
           %li
             %a{href: my_restaurants_path}Mis Restaurantes
 
-
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown{id:"fat-menu"}
 
@@ -34,6 +33,16 @@
               %hr
               %li
                 =link_to "Cerrar Sesion" , destroy_user_session_path, :method => :delete
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown{id:"restaurant-menu"}
+
+            %a{href:"#",id:"drop3", role:"button", class:"dropdown-toggle","data-toggle"=>"dropdown"}
+              =@restaurant.name
+              %span.caret
+            %ul.dropdown-menu{"aria-labelledby" => "drop3"}
+              %li
+                %a{tabindex:"-1", href: "#"} Opciones Restaurante
+
 
 
 
@@ -45,7 +54,13 @@
 
     / /.navbar-collapse
 / Main jumbotron for a primary marketing message or call to action
-.alert-success.text-center{id: "alerta-registro"} Datos actualizados
+
+.alert-container{id: "alerta-profile"}
+  .empty-alert{id:"empty-alert"}
+    -if flash[:notice]
+      .alert-success.text-center
+        =flash[:notice]
+
 .container
   .container-fluid
     .row
@@ -57,8 +72,12 @@
 
         %ul.nav.nav-pills.nav-stacked.table-bordered
           %li.active
+            %a.text-center{"data-toggle" => "tab",href:"#photos"}
+              Fotos restaurante
+              .glyphicon.glyphicon-user
+          %li
             %a.text-center{"data-toggle" => "tab",href:"#info"}
-              Perfil
+              Datos restaurante
               .glyphicon.glyphicon-user
           %li
             %a.text-center{"data-toggle" => "tab",href:"#recetas"}
@@ -75,20 +94,16 @@
 
       .col-md-9
         .tab-content
-          .tab-pane.fade.in.active{id:"info"}
-            %h2.page-header
-              ="#{@restaurant.name}: perfil restaurante"
-
-              =link_to  "Editar Info", "#{edit_restaurant_profile_path(:restaurant => @restaurant.name)}" , :class =>"btn btn-success pull-right" ,remote: true, id: "btn-edit-restaurant"
-            .div{id:"show"}
-              =render "restaurants/show"
-
-
-
+          .tab-pane.fade.in.active{id:"photos"}
+            =render "restaurant_photos/show"
+          .tab-pane.fade{id:"info"}
+            =render "restaurants/form_edit"
 
           .tab-pane.fade{id:"recetas"}
-            %h2.page-header
+            %p.h2
               ="#{@restaurant.name}: recetas"
+              %hr
+
             %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
           .tab-pane.fade{id:"followers"}
             %h2.page-header
