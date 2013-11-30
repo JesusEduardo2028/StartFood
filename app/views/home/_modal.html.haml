@@ -1,0 +1,8 @@
+.modal-dialog
+  .modal-content
+    .modal-body
+      %h3.text-center
+        ="Esta seguro de eliminar #{plate_name}?"
+    .modal-footer
+      %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} cancelar
+      =link_to "ok", plate_path(plate,:restaurant=>@restaurant.name)  ,:method => :delete ,:class => "btn btn-info",:remote=>true

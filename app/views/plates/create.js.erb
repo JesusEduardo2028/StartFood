@@ -1,0 +1,6 @@
+$("#plateModal").modal('hide');
+$("#show_plates").html("<%= escape_javascript(render "plates/list")%>");
+
+
+$("#alerta-profile").html("<%= escape_javascript(render "home/alert",:message=>"Nuevo plato creado",:type=>"success")%>");
+$(".alert-success").delay(3000).fadeOut()

@@ -6,6 +6,7 @@ class Restaurant
   field :user_name, type: String
   field :address
   field :phone
+  has_many :plates
 
   has_many :restaurant_photos
   belongs_to :user

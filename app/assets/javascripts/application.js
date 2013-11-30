@@ -30,3 +30,11 @@ $("#btn-edit").on("click",function(){
 });
 
 
+$(document).ready(function() {
+    return $(".plate").click(function() {
+        var plate = "#{f}";
+
+        plate = $(this).data('plate');
+        return $("#deleteModal").modal('show');
+    });
+});

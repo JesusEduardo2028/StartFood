@@ -1,0 +1,13 @@
+= simple_form_for(@plate,:url=>plate_path(:restaurant=>@restaurant.name),:remote=>true) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.label "Nombre"
+    = f.text_field :name ,:class =>"form-control"
+    = f.label "Descripcion"
+    = f.text_field :description ,:class =>"form-control"
+
+  %br
+  .form-actions
+    = f.button :submit ,"Guardar Cambios" ,:class=>"btn btn-info"
+    =link_to "Cancelar", plates_path(:restaurant=>@restaurant.name) , remote:true ,class:"btn btn-default"

@@ -1,0 +1,1 @@
+$("#deleteModal").html("<%= escape_javascript(render "home/modal",:plate=>@plate.id,:plate_name=>@plate.name)%>").modal('show');

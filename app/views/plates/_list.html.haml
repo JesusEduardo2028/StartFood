@@ -1,0 +1,33 @@
+%table.table.table-responsive.table-hover.table-striped
+  %thead
+    %th.left
+      .p.h3
+        Platos
+        %a.div-registro.navbar-right{"data-toggle"=>"modal","data-target"=>"#plateModal"}
+          %btn.btn.btn-success.btn-registro Nuevo Plato
+
+  %tbody
+
+    -if @restaurant.plates.empty?
+      %tr
+        %td
+          Aun no ha registrado ningun plato
+
+
+    -else
+      -@restaurant.plates.each do |plate|
+        %tr
+          %td
+            .row
+              .col-md-9
+                %h3
+                  =link_to  "#{plate.name.capitalize!}","#"
+
+                %h4
+                  Likes(0) &nbsp
+              .col-md-3
+                %h3
+                =link_to " ", edit_plate_path(plate,:restaurant=>@restaurant.name), :method => :get,:remote=>true ,class:"btn btn-default glyphicon glyphicon-edit","data-toggle"=>"tooltip", title:"Editar"
+                =link_to " ", confirm_delete_plate_path(:plate_id=>plate.id,:restaurant=>@restaurant.name), :method => :get,:remote=>true ,class:"btn btn-default glyphicon glyphicon-trash","data-toggle"=>"tooltip", title:"Borrar"
+
+

@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant])
     @restaurant_photo = RestaurantPhoto.new
     @list = @restaurant.restaurant_photos
-
+    @plate = Plate.new
 
 
     respond_to do |format|

@@ -1,0 +1,6 @@
+$("#deleteModal").modal('hide');
+$("#recetas").html("<%= escape_javascript(render "plates/list")%>");
+
+
+$("#alerta-profile").html("<%= escape_javascript(render "home/alert",:message=>"Plato eliminado",:type=>"success")%>");
+$(".alert-success").delay(3000).fadeOut()

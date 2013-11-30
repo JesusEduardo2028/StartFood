@@ -1,0 +1,10 @@
+= simple_form_for(@plate,url: plates_url(:restaurant_name=>@restaurant.name),:remote=>true) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.label "Nombre"
+    = f.text_field :name ,:class =>"form-control"
+
+  %br
+  .form-actions
+    = f.button :submit ,"Crear Plato"

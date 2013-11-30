@@ -81,7 +81,7 @@
               .glyphicon.glyphicon-user
           %li
             %a.text-center{"data-toggle" => "tab",href:"#recetas"}
-              Recetas
+              Platos
               .glyphicon.glyphicon-list
           %li
             %a.text-center{"data-toggle" => "tab",href:"#followers"}
@@ -100,11 +100,14 @@
             =render "restaurants/form_edit"
 
           .tab-pane.fade{id:"recetas"}
-            %p.h2
-              ="#{@restaurant.name}: recetas"
-              %hr
+            .center-info
+              .div{id:"show_plates"}
+                =render "plates/list"
 
-            %img.img-responsive.pull-right.thumbnail{src: "http://placehold.it/300x200", alt:"placeholder"}
+
+
+
+
           .tab-pane.fade{id:"followers"}
             %h2.page-header
               ="#{@restaurant.name}: seguidores"
@@ -145,5 +148,19 @@
                   %th Info
                   %th Info
                   %th
+
+%div.modal.fade{id: "deleteModal" , tabIndex: "-1", role: "dialog" , "aria-labelledby" => "myModalLabel",  "aria-hidden" => "true"}
+  %h3 modal
+
+%div.modal.fade{id: "plateModal" , tabIndex: "-1", role: "dialog" , "aria-labelledby" => "myModalLabel",  "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title{id: "myModalLabel"} Nuevo plato
+      .modal-body
+        =render 'plates/form'
+
+
 
 

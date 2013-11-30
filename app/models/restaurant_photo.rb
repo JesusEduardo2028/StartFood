@@ -7,7 +7,7 @@ class RestaurantPhoto
   field :image, type: String
 
   belongs_to :restaurant
-  
+
   mount_uploader :image, ImageUploader
 
 

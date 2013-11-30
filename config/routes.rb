@@ -1,5 +1,8 @@
 Kiwii::Application.routes.draw do
 
+  resources :plates
+
+
   resources :restaurant_photos
 
 
@@ -14,7 +17,7 @@ Kiwii::Application.routes.draw do
   get 'my_restaurants', to: 'restaurant_list#show'
   get 'restaurant_profile', to: 'profile#show'
   get 'edit_restaurant_profile', to: 'profile#edit'
-
+  get 'confirm_delete_plate', to: 'plates#confirm_delete'
 
   root :to => "home#index"
   # The priority is based upon order of creation:
