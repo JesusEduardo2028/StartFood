@@ -1,6 +1,19 @@
 = simple_form_for(@plate,:url=>plate_path(:restaurant=>@restaurant.name),:remote=>true) do |f|
   = f.error_notification
+  -if @plate.plate_photo.image_url.nil?
+    %h4 Foto del plato
 
+    %a.thumbnail{href:"#"}
+      %img.img-responsive{src: "http://placehold.it/400x400"}
+    %a.div-registro.full{"data-toggle"=>"modal","data-target"=>"#regModal"}
+      %btn.btn.btn-success.btn-registro.full Cambiar Foto
+
+  -else
+
+    %a.thumbnail{href:"#"}
+      =image_tag @plate.plate_photo.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
+    %a.div-registro.full{"data-toggle"=>"modal","data-target"=>"#regModal"}
+      %btn.btn.btn-success.btn-registro.full Cambiar Foto
   .form-inputs
     = f.label "Nombre"
     = f.text_field :name ,:class =>"form-control"
@@ -11,3 +24,16 @@
   .form-actions
     = f.button :submit ,"Guardar Cambios" ,:class=>"btn btn-info"
     =link_to "Cancelar", plates_path(:restaurant=>@restaurant.name) , remote:true ,class:"btn btn-default"
+
+%div.modal.fade{id: "regModal" , tabIndex: "-1", role: "dialog" , "aria-labelledby" => "myModalLabel",  "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title{id: "myModalLabel"} Subir imagen
+      .modal-body
+        =render "plate_photos/form"
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+

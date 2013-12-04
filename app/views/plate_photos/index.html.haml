@@ -1,0 +1,21 @@
+%h1 Listing plate_photos
+
+%table
+  %tr
+    %th Image
+    %th Plate name
+    %th
+    %th
+    %th
+
+  - @plate_photos.each do |plate_photo|
+    %tr
+      %td= plate_photo.image
+      %td= plate_photo.plate_name
+      %td= link_to 'Show', plate_photo
+      %td= link_to 'Edit', edit_plate_photo_path(plate_photo)
+      %td= link_to 'Destroy', plate_photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Plate photo', new_plate_photo_path

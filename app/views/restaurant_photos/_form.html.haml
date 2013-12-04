@@ -2,7 +2,8 @@
         :url=>restaurant_photos_path(:restaurant=>@restaurant.name),
         :html=>{:multipart=>true},
         :remote=>true,
-        :format => 'js') do |g|
+        :format => 'js',
+        :id=>"new_restaurant_photo") do |g|
 
   .container-fluid
     .alert-container{id: "alerta-error"}
@@ -13,7 +14,6 @@
 
 
 
-    = g.file_field :image
-    %br
+    = g.file_field :image, multiple: true , name: "restaurant_photo[image]"
     %br
     = g.button :submit, "ok",:class=>"btn btn-info pull-right full"

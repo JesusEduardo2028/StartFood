@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Image:
+  = @plate_photo.image
+%p
+  %b Plate name:
+  = @plate_photo.plate_name
+
+= link_to 'Edit', edit_plate_photo_path(@plate_photo)
+\|
+= link_to 'Back', plate_photos_path

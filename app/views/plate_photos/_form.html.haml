@@ -1,0 +1,9 @@
+= simple_form_for(@plate_photo) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :image
+    = f.input :plate_name
+
+  .form-actions
+    = f.button :submit

@@ -37,6 +37,7 @@ class PlatesController < ApplicationController
   # GET /plates/1/edit
   def edit
     @plate = Plate.find(params[:id])
+    @plate_photo = @plate.plate_photo
     @restaurant = Restaurant.find(params[:restaurant])
     respond_to do |format|
       format.html
@@ -52,10 +53,17 @@ class PlatesController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_name])
 
     @plate = @restaurant.plates.create!(params[:plate])
+    @plate_photo = PlatePhoto.new
+    @plate.plate_photo= @plate_photo
+    @plate_photo.plate_name = @plate.name
+
+
     @plate.restaurant_name = @restaurant.name
 
     respond_to do |format|
       if @plate.save
+
+        @plate_photo.save
         format.html { redirect_to @plate, notice: 'Plate was successfully created.' }
         format.json { render json: @plate, status: :created, location: @plate }
         format.js
@@ -71,6 +79,7 @@ class PlatesController < ApplicationController
   def update
     @plate = Plate.find(params[:id])
     @restaurant = Restaurant.find(params[:restaurant])
+
     respond_to do |format|
       if @plate.update_attributes(params[:plate])
         format.html { redirect_to @plate, notice: 'Plate was successfully updated.' }

@@ -16,7 +16,9 @@
 //= require bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require jquery-fileupload/basic
 //= require jasny-bootstrap
+//= require jquery-fileupload/vendor/tmpl
 
 $(document).ready(function(){
     $('.carousel').carousel('cycle');

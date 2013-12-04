@@ -24,10 +24,13 @@
             %a.thumbnail{href:"#"}
               =image_tag photo.image_url.to_s,:class => "img img-responsive",id:"thumb_restaurante"
 
+
     %a.carousel-control.left{href:"#restaurant-carousel" ,"data-slide"=>"prev"}
       .glyphicon.glyphicon-chevron-left
     %a.carousel-control.right{href:"#restaurant-carousel" ,"data-slide"=>"next"}
       .glyphicon.glyphicon-chevron-right
+
+  =render "restaurant_photos/form"
 
   %a.div-registro.full{"data-toggle"=>"modal","data-target"=>"#regModal"}
     %btn.btn.btn-success.btn-registro.full Subir foto

@@ -1,5 +1,8 @@
 Kiwii::Application.routes.draw do
 
+  resources :plate_photos
+
+
   resources :plates
 
 
