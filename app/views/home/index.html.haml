@@ -1,3 +1,76 @@
+.header
+  .container
+    .row
+      .col-md-2.col-sm-2
+        / Logo
+        .logo
+          %h1
+            %a{href: "index-2.html"} OlsonKart
+      .col-md-6.col-sm-5
+        / Navigation menu
+        .navi
+          #ddtopmenubar.mattblackmenu
+            %ul
+              %li
+                %a{href: "index-2.html"} Home
+              %li
+                %a{href: "#", rel: "ddsubmenu1"} Account
+                %ul#ddsubmenu1.ddsubmenustyle
+                  %li
+                    %a{href: "account.html"} My Account
+                  %li
+                    %a{href: "viewcart.html"} View Cart
+                  %li
+                    %a{href: "checkout.html"} Checkout
+                  %li
+                    %a{href: "wishlist.html"} Wish List
+                  %li
+                    %a{href: "orderhistory.html"} Order History
+                  %li
+                    %a{href: "editprofile.html"} Edit Profile
+                  %li
+                    %a{href: "confirmation.html"} Confirmation
+              %li
+                %a{href: "#", rel: "ddsubmenu1"} Pages
+                %ul#ddsubmenu1.ddsubmenustyle
+                  %li
+                    %a{href: "404.html"} 404
+                  %li
+                    %a{href: "faq.html"} FAQ
+                  %li
+                    %a{href: "blog.html"} Blog
+                  %li
+                    %a{href: "careers.html"} Careers
+                  %li
+                    %a{href: "support.html"} Support
+                  %li
+                    %a{href: "aboutus.html"} About
+              %li
+                %a{href: "#", rel: "ddsubmenu1"} Computers
+                %ul#ddsubmenu1.ddsubmenustyle
+                  %li
+                    %a{href: "items.html"} Desktop
+                  %li
+                    %a{href: "items.html"} Laptop
+                  %li
+                    %a{href: "items.html"} NetBook
+                  %li
+                    %a{href: "items.html"} All-In-One PC
+                  %li
+                    %a{href: "items.html"} Alienware
+              %li
+                %a{href: "contactus.html"} Contact
+        / Dropdown NavBar
+        .navis
+      .col-md-4.col-sm-5
+        .kart-links
+          %a{href: "login.html"} Login
+          %a{href: "register.html"} Signup
+          %a{"data-toggle" => "modal", href: "#shoppingcart"}
+            %i.icon-shopping-cart
+            3 Items - $300
+
+
 .navbar.navbar-default.navbar-fixed-top{role: "navigation"}
   .container
     .navbar-header
